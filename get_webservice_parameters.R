@@ -46,8 +46,7 @@ get_webservice_parameters <- function(my_model, wkID="foo", authToken="bar"){
 }
 
 
-# workspace_id <- "7e41241404044674a6909d6ac9cdcd2b"
-# auth_token   <- "51dd99b305e24166abbc8718acae29a6"
+# You must define workspace_id and auth_token for your Azure account.
 
 # faithful_lm_01 <- lm(eruptions ~ waiting, faithful)
 # wsp <- get_webservice_parameters(faithful_lm_01, workspace_id, auth_token)
