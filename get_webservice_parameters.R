@@ -39,9 +39,10 @@ get_webservice_parameters <- function(my_model, wkID="foo", authToken="bar"){
 
   }
   
-  list(functionName=functionName, serviceName=serviceName, 
+  list(param=list(functionName=functionName, serviceName=serviceName, 
                     inputSchema=inputSchema, outputSchema=outputSchema,
-                    wkID=wkID, authToken=authToken, src=prediction_function_src())
+                    wkID=wkID, authToken=authToken), 
+      src=prediction_function_src())
   
 }
 
@@ -51,4 +52,4 @@ get_webservice_parameters <- function(my_model, wkID="foo", authToken="bar"){
 # faithful_lm_01 <- lm(eruptions ~ waiting, faithful)
 # wsp <- get_webservice_parameters(faithful_lm_01, workspace_id, auth_token)
 # eval(parse(text=wsp$src))
-# ws_info <- do.call("publishWebService", wsp[-7])
+# ws_info <- do.call("publishWebService", wsp$param)
